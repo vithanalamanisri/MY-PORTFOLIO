@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manisri Vithanala | AI/ML Engineer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0c12;
+            color: #eef2ff;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 60px;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .section-title h2 {
+            background: linear-gradient(135deg, #ffffff, #94a3f8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-title .subtitle {
+            color: #94a3b8;
+            font-size: 18px;
+            margin-top: 12px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 40px; }
+            h2 { font-size: 32px; }
+            .container { padding: 0 20px; }
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 12, 18, 0.95);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            z-index: 1000;
+            padding: 18px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border: none;
+            padding: 12px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(59, 130, 246, 0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #3b82f6;
+            padding: 10px 28px;
+            border-radius: 100px;
+            font-weight: 500;
+            color: #e2e8f0;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: #60a5fa;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(59,130,246,0.08), transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            border-radius: 100px;
+            font-size: 14px;
+            color: #93c5fd;
+            margin-bottom: 24px;
+        }
+
+        .hero-description {
+            color: #94a3b8;
+            font-size: 18px;
+            margin: 24px 0 32px;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .social-links a {
+            color: #94a3b8;
+            font-size: 22px;
+            transition: all 0.2s;
+        }
+
+        .social-links a:hover {
+            color: #60a5fa;
+            transform: translateY(-3px);
+        }
+
+        .profile-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 40px;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            padding: 8px;
+            border: 2px solid rgba(59, 130, 246, 0.5);
+            box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .profile-image:hover {
+            border-color: #60a5fa;
+            transform: scale(1.02);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 34px;
+            object-fit: cover;
+        }
+
+        .profile-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 48px;
+            }
+            .hero-description { margin: 20px auto; }
+            .social-links { justify-content: center; }
+            .profile-wrapper { max-width: 300px; }
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 32px;
+        }
+
+        .project-card {
+            background: #0f1219;
+            border: 1px solid #1e293b;
+            border-radius: 28px;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #131825, #0a0c12);
+            padding: 28px 24px 20px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .project-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(59, 130, 246, 0.12);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .project-icon i, .project-icon img {
+            font-size: 28px;
+            width: 32px;
+            height: 32px;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .project-description {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.6;
+            padding: 20px 24px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .project-tech {
+            padding: 16px 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .tech-badge {
+            background: rgba(59, 130, 246, 0.12);
+            border-radius: 100px;
+            padding: 5px 14px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #93c5fd;
+        }
+
+        .project-links {
+            padding: 20px 24px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .demo-note {
+            font-size: 11px;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: auto;
+        }
+
+        .demo-note i {
+            font-size: 10px;
+        }
+
+        @media (max-width: 640px) {
+            .project-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .demo-note {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .skill-category {
+            background: #0f1219;
+            border: 1px solid #1e293b;
+            border-radius: 28px;
+            padding: 28px;
+        }
+
+        .skill-category h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-item {
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .skill-item:hover {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.15);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .achievement-card {
+            background: #0f1219;
+            border: 1px solid #1e293b;
+            border-radius: 20px;
+            padding: 24px;
+            display: flex;
+            gap: 18px;
+            transition: all 0.25s;
+        }
+
+        .achievement-card:hover {
+            border-color: #3b82f6;
+            transform: translateX(6px);
+        }
+
+        .achievement-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(139,92,246,0.1));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .achievement-icon i {
+            font-size: 24px;
+            color: #60a5fa;
+        }
+
+        .achievement-content h4 {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .achievement-content p {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .exp-card {
+            background: #0f1219;
+            border: 1px solid #1e293b;
+            border-radius: 24px;
+            padding: 28px;
+            transition: all 0.25s;
+        }
+
+        .exp-card:hover {
+            border-color: #3b82f6;
+        }
+
+        .exp-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(59, 130, 246, 0.12);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .exp-icon i {
+            font-size: 26px;
+        }
+
+        .exp-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .exp-card p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .contact-wrapper {
+            background: #0f1219;
+            border: 1px solid #1e293b;
+            border-radius: 36px;
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 16px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+
+        .contact-detail i {
+            width: 32px;
+            color: #60a5fa;
+            font-size: 18px;
+        }
+
+        .feedback-form textarea {
+            width: 100%;
+            padding: 18px;
+            background: #0a0c12;
+            border: 1px solid #1e293b;
+            border-radius: 24px;
+            color: white;
+            font-family: inherit;
+            font-size: 15px;
+            transition: 0.2s;
+            margin-bottom: 20px;
+            resize: vertical;
+        }
+
+        .feedback-form textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
+
+        .feedback-form textarea::placeholder {
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .email-hint {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 10px 14px;
+            margin-top: 12px;
+            font-size: 12px;
+            color: #f87171;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .email-hint.hidden {
+            display: none;
+        }
+
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #1e293b;
+            border-left: 4px solid #3b82f6;
+            padding: 14px 24px;
+            border-radius: 12px;
+            color: white;
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .footer {
+            border-top: 1px solid #1e293b;
+            padding: 40px 0;
+            text-align: center;
+            color: #64748b;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                padding: 32px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="toastMsg" class="toast-notification">
+    <i class="fas fa-check-circle" style="color: #3b82f6;"></i>
+    <span id="toastText">Message sent successfully!</span>
+</div>
+
+<nav class="navbar">
+    <div class="container nav-content">
+        <span class="logo">MANISRI</span>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <a href="MANI RESUME(FINAL).pdf" download class="btn-primary" style="padding: 8px 24px;">
+            <i class="fas fa-download"></i> Resume
+        </a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="container hero-grid">
+        <div>
+            <span class="hero-badge">
+                <i class="fas fa-robot"></i> AI Engineer & ML Specialist
+            </span>
+            <h1>Vithanala <span style="background: linear-gradient(135deg, #60a5fa, #c084fc); -webkit-background-clip: text; background-clip: text; color: transparent;">Manisri</span></h1>
+            <div style="font-size: 22px; font-weight: 500; margin: 16px 0; color: #a5b4fc;">
+                Building Intelligent Systems that Solve Real-World Problems
+            </div>
+            <p class="hero-description">
+                AI/ML Engineer with <strong style="color: #60a5fa;">9.43 CGPA</strong> • Google Student Ambassador • 5+ Production-Grade AI Products.
+                Specializing in NLP, Deep Learning, and Scalable AI Deployments.
+            </p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                <a href="#projects" class="btn-primary">
+                    <i class="fas fa-eye"></i> View Work
+                </a>
+                <a href="MANI RESUME(FINAL).pdf" download class="btn-outline">
+                    <i class="fas fa-file-pdf"></i> Download CV
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/vithanalamanisri" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/manisri-vithanala/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:vithanalamanisri@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div>
+            <div class="profile-wrapper">
+                <div class="profile-image">
+                    <img src="images/profile.jpg" alt="Manisri Vithanala" onerror="this.src='https://ui-avatars.com/api/?background=0F172A&color=3b82f6&bold=true&size=400&name=Manisri+Vithanala'">
+                </div>
+                <div class="profile-badge">
+                    <i class="fas fa-certificate"></i> Google Ambassador
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" style="padding: 100px 0;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Featured AI Systems</h2>
+            <div class="subtitle">Production-grade ML/NLP solutions deployed at scale</div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon"><i class="fas fa-chalkboard-user" style="color: #60a5fa;"></i></div>
+                    <h3>Career Guidance & Resume Intelligence</h3>
+                </div>
+                <div class="project-description">
+                    AI-powered platform delivering ATS scoring, interview mentoring, and personalized career roadmaps using advanced NLP techniques.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">NLP</span>
+                    <span class="tech-badge">Scikit-learn</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://master-project-zu8s.onrender.com/" target="_blank" class="btn-primary" style="padding: 8px 20px; font-size: 13px;">Live Demo →</a>
+                    <span class="demo-note"><i class="fas fa-clock"></i> may take 30-60 sec to load</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <img src="https://img.icons8.com/fluency/48/spam.png" alt="SpamShield Logo" style="width: 32px; height: 32px;">
+                    </div>
+                    <h3>SpamShield AI</h3>
+                </div>
+                <div class="project-description">
+                    Intelligent email spam detection system achieving 98% accuracy with real-time classification, batch CSV processing, and analytics visualization.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-badge">TensorFlow</span>
+                    <span class="tech-badge">NLP</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">Pandas</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://spam-detection-1-kxzv.onrender.com/" target="_blank" class="btn-primary" style="padding: 8px 20px; font-size: 13px;">Live Demo →</a>
+                    <span class="demo-note"><i class="fas fa-clock"></i> may take 30-60 sec to load</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon"><i class="fas fa-briefcase" style="color: #34d399;"></i></div>
+                    <h3>InternSafe AI</h3>
+                </div>
+                <div class="project-description">
+                    AI-powered fraud detection platform analyzing company details and message content to identify fake internship opportunities with confidence scoring.
+                </div>
+                <div class="project-tech">
+                    <span class="tech-badge">PyTorch</span>
+                    <span class="tech-badge">NLP</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">BERT</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://sheild-ai-47xz.onrender.com/" target="_blank" class="btn-primary" style="padding: 8px 20px; font-size: 13px;">Live Demo →</a>
+                    <span class="demo-note"><i class="fas fa-clock"></i> may take 30-60 sec to load</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" style="padding: 80px 0; background: rgba(59, 130, 246, 0.02);">
+    <div class="container">
+        <div class="section-title">
+            <h2>Technical Expertise</h2>
+            <div class="subtitle">Core competencies & technologies I work with</div>
+        </div>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3><i class="fas fa-code" style="color: #60a5fa;"></i> Programming Languages</h3>
+                <div class="skill-items">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">JavaScript</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-brain" style="color: #a78bfa;"></i> AI & Machine Learning</h3>
+                <div class="skill-items">
+                    <span class="skill-item">TensorFlow</span>
+                    <span class="skill-item">PyTorch</span>
+                    <span class="skill-item">Scikit-learn</span>
+                    <span class="skill-item">NLP</span>
+                    <span class="skill-item">Supervised Learning</span>
+                    <span class="skill-item">Unsupervised Learning</span>
+                    <span class="skill-item">Deep Learning</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-cloud" style="color: #34d399;"></i> Deployment & Tools</h3>
+                <div class="skill-items">
+                    <span class="skill-item">Flask</span>
+                    <span class="skill-item">Render</span>
+                    <span class="skill-item">Vercel</span>
+                    <span class="skill-item">Git</span>
+                    <span class="skill-item">Docker</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Achievements Section -->
+<section style="padding: 80px 0;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Achievements & Recognition</h2>
+            <div class="subtitle">Awards and honors earned through excellence</div>
+        </div>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+                <div class="achievement-content">
+                    <h4>Top 3 National Essay Competition 2025</h4>
+                    <p>Winner organized by CAG, New Delhi among 500+ participants nationwide</p>
+                </div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon"><i class="fas fa-globe-asia"></i></div>
+                <div class="achievement-content">
+                    <h4>IEEE YESIST12 Grand Finale</h4>
+                    <p>Selected participant representing India at international innovation summit, Malaysia</p>
+                </div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon"><i class="fas fa-landmark"></i></div>
+                <div class="achievement-content">
+                    <h4>Viksit Bharat Youth Parliament 2025</h4>
+                    <p>State-selected delegate for national youth leadership program</p>
+                </div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
+                <div class="achievement-content">
+                    <h4>Google Student Ambassador</h4>
+                    <p>Official certification for promoting Google technologies and AI tools</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" style="padding: 80px 0; background: rgba(59, 130, 246, 0.02);">
+    <div class="container">
+        <div class="section-title">
+            <h2>Leadership & Impact</h2>
+            <div class="subtitle">Roles where I've made a difference</div>
+        </div>
+        <div class="experience-grid">
+            <div class="exp-card">
+                <div class="exp-icon"><i class="fab fa-google" style="color: #60a5fa;"></i></div>
+                <h3>Google Student Ambassador</h3>
+                <p>Organized technical workshops, promoted Google AI tools, and drove student engagement across campus.</p>
+            </div>
+            <div class="exp-card">
+                <div class="exp-icon"><i class="fas fa-chalkboard-user" style="color: #a78bfa;"></i></div>
+                <h3>LetsUpgrade Ambassador</h3>
+                <p>Led campus outreach for tech bootcamps and certifications, coordinated industry-relevant skill development.</p>
+            </div>
+            <div class="exp-card">
+                <div class="exp-icon"><i class="fas fa-hand-holding-heart" style="color: #34d399;"></i></div>
+                <h3>NSS Volunteer</h3>
+                <p>Actively contributed to community development initiatives and organized social awareness campaigns.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" style="padding: 100px 0;">
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2 style="font-size: 32px;">Share Your Feedback</h2>
+                <p style="color: #94a3b8; margin: 16px 0 24px;">I'd love to hear your thoughts about my work, opportunities, or just connect!</p>
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i>
+                    <span>vithanalamanisri@gmail.com</span>
+                </div>
+                <div class="contact-detail">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/manisri-vithanala</span>
+                </div>
+                <div class="contact-detail">
+                    <i class="fab fa-github"></i>
+                    <span>github.com/vithanalamanisri</span>
+                </div>
+                <a href="MANI RESUME(FINAL).pdf" download class="btn-primary" style="margin-top: 32px; width: 100%; justify-content: center;">
+                    <i class="fas fa-download"></i> Download Resume (PDF)
+                </a>
+            </div>
+            <div>
+                <form class="feedback-form" id="feedbackForm">
+                    <textarea 
+                        id="feedbackMessage" 
+                        rows="8" 
+                        placeholder="Write your feedback here...&#10;&#10;📧 Please include your email address so I can reply!&#10;&#10;Example:&#10;Hi Manisri,&#10;I really loved your SpamShield AI project! I'm reaching out about a potential AI role. Would love to connect!&#10;&#10;Best,&#10;John Doe (john.doe@email.com)"
+                        required
+                    ></textarea>
+                    <div id="emailHint" class="email-hint">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>⚠️ Please include your email address (e.g., name@example.com) to send your message</span>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;" id="sendBtn">
+                        <i class="fas fa-paper-plane"></i> Send Feedback
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Vithanala Manisri — AI Engineer | Building Intelligent Systems for a Better Tomorrow</p>
+        <div style="margin-top: 20px;">
+            <a href="https://github.com/vithanalamanisri" target="_blank" style="color: #64748b; margin: 0 12px;"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/manisri-vithanala/" target="_blank" style="color: #64748b; margin: 0 12px;"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:vithanalamanisri@gmail.com" style="color: #64748b; margin: 0 12px;"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // EmailJS Credentials
+    const EMAILJS_PUBLIC_KEY = "i69ciiaCi4qrLUnOC";
+    const EMAILJS_SERVICE_ID = "service_q51n0mb";
+    const EMAILJS_TEMPLATE_ID = "template_9c230fg";
+
+    (function() {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+    })();
+
+    function showToast(message, isError = false) {
+        const toast = document.getElementById('toastMsg');
+        const toastText = document.getElementById('toastText');
+        toastText.textContent = message;
+        toast.style.display = 'flex';
+        toast.style.borderLeftColor = isError ? '#ef4444' : '#3b82f6';
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, 4000);
+    }
+
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    function extractEmail(message) {
+        const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
+        const match = message.match(emailRegex);
+        return match ? match[0] : null;
+    }
+
+    const feedbackForm = document.getElementById('feedbackForm');
+    const messageTextarea = document.getElementById('feedbackMessage');
+    const emailHint = document.getElementById('emailHint');
+
+    if(messageTextarea && emailHint) {
+        messageTextarea.addEventListener('input', function() {
+            const message = this.value;
+            const extractedEmail = extractEmail(message);
+            
+            if(extractedEmail && isValidEmail(extractedEmail)) {
+                emailHint.style.display = 'none';
+            } else {
+                emailHint.style.display = 'flex';
+            }
+        });
+    }
+
+    if(feedbackForm) {
+        feedbackForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fullMessage = document.getElementById('feedbackMessage').value;
+            
+            if(!fullMessage || fullMessage.trim() === '') {
+                showToast('Please write your feedback before sending', true);
+                return;
+            }
+            
+            const extractedEmail = extractEmail(fullMessage);
+            
+            if(!extractedEmail || !isValidEmail(extractedEmail)) {
+                showToast('❌ Cannot send: Please include a valid email address in your message', true);
+                return;
+            }
+            
+            const sendBtn = document.getElementById('sendBtn');
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            const templateParams = {
+                from_name: extractedEmail,
+                from_email: extractedEmail,
+                message: fullMessage,
+                to_email: 'vithanalamanisri@gmail.com'
+            };
+            
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                .then(function(response) {
+                    showToast('✨ Feedback sent! I will reply to ' + extractedEmail, false);
+                    feedbackForm.reset();
+                    emailHint.style.display = 'flex';
+                    sendBtn.disabled = false;
+                    sendBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Feedback';
+                }, function(error) {
+                    console.error('EmailJS Error:', error);
+                    showToast('❌ Failed to send. Please email directly to vithanalamanisri@gmail.com', true);
+                    sendBtn.disabled = false;
+                    sendBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Feedback';
+                });
+        });
+    }
+</script>
+</body>
+</html>
